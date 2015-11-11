@@ -188,7 +188,7 @@ function split_sql(str, tab) {
 
     return str.replace(/\s{1,}/g," ")
 
-        .replace(/ AND /ig,"~::~"+tab+tab+"AND ")
+        .replace(/ AND /ig,"~::~"+tab+"AND ")
         .replace(/ BETWEEN /ig,"~::~"+tab+"BETWEEN ")
         .replace(/ CASE /ig,"~::~"+tab+"CASE ")
         .replace(/ ELSE /ig,"~::~"+tab+"ELSE ")
@@ -260,8 +260,8 @@ pp.prototype.sql = function(text) {
 
         parenthesisLevel = isSubquery(ar[ix], parenthesisLevel);
 
-        if( /\s{0,}\s{0,}SELECT\s{0,}/.exec(ar[ix]))  { 
-            ar[ix] = ar[ix].replace(/\,/g,",\n"+tab+tab+"")
+        if( /\s{0,}\s{0,}SELECT\s{0,}/.exec(ar[ix])) {
+            ar[ix] = ar[ix].replace(/\,/g,",\n"+tab+tab+tab+"")
         } 
 
         if( /\s{0,}\(\s{0,}SELECT\s{0,}/.exec(ar[ix]))  { 
