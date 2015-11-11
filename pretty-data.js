@@ -194,6 +194,7 @@ function split_sql(str, tab) {
         .replace(/ ELSE /ig,"~::~"+tab+"ELSE ")
         .replace(/ END /ig,"~::~"+tab+"END ")
         .replace(/ FROM /ig,"~::~FROM ")
+        .replace(/ SET /ig,"~::~SET ")
         .replace(/ GROUP\s{1,}BY/ig,"~::~GROUP BY ")
         .replace(/ HAVING /ig,"~::~HAVING ")
         //.replace(/ IN /ig,"~::~"+tab+"IN ")
